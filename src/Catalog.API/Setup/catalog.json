@@ -807,4 +807,28 @@
     "Description": "The Trek Xtreme hiking shoes by Raptor Elite are built to endure any trail. With their durable leather upper and rugged rubber sole, they offer excellent traction and protection. These shoes come in a timeless brown color that adds a touch of style to your outdoor adventures.",
     "Price": 135.99
   }
+  {
+    "Id": 102,
+    "Type": "Navigation",
+    "Brand": "Quester",
+    "Name": "Trek Xtreme Hiking Shoes",
+    "Description": " A stylish yet functional bracelet made of durable paracord, featuring a built-in firestarter, compass, and emergency whistle. Perfect for survivalists and hikers.",
+    "Price": 24.99
+  }
+  {
+    "Id": 103,
+    "Type": "Trekking",
+    "Brand": "Quester",
+    "Name": "Smart Water Purifier Bottle",
+    "Description": "A self-cleaning water bottle with built-in UV-C sterilization to kill harmful bacteria and viruses. It connects to your phone via an app to monitor water quality and bottle status.",
+    "Price": 99.99
+  }
+  {
+    "Id": 104,
+    "Type": "Bags",
+    "Brand": "Quester",
+    "Name": "Trailblazer One-Shoulder Pack",
+    "Description": "The SummitVenture Trailblazer One-Shoulder Pack is designed for the modern adventurer who needs quick access to essentials on the go. With a sleek, ergonomic design, it comfortably hugs your body, providing maximum freedom of movement for your day hikes.",
+    "Price": 79.99
+  }
 ]
