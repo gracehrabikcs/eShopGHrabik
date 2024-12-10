@@ -36,11 +36,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Pics\*.webp" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="oldPics\*.webp" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>
     <InternalsVisibleTo Include="Catalog.FunctionalTests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pics\" />
   </ItemGroup>
 
 </Project>
