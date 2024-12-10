@@ -43,8 +43,4 @@
     <InternalsVisibleTo Include="Catalog.FunctionalTests" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Pics\" />
-  </ItemGroup>
-
 </Project>
