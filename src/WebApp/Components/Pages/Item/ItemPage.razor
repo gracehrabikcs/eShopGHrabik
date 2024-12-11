@@ -86,12 +86,30 @@ else if (notFound)
             notFound = true;
         }
     }
-
+    /*
     private async Task AddToCartAsync()
     {
         if (!isLoggedIn)
         {
             Nav.NavigateTo(Pages.User.LogIn.Url(Nav));
+            return;
+        }
+
+        if (item is not null)
+        {
+            await BasketState.AddAsync(item);
+            await UpdateNumInCartAsync();
+        }
+    }
+    */
+   // updated AddToCartAsync method
+    private async Task AddToCartAsync()
+    {
+        if (!isLoggedIn)
+        {
+            // Navigate to the login page with a return URL to the current page
+            var returnUrl = Nav.ToBaseRelativePath(Nav.Uri);
+            Nav.NavigateTo($"{Pages.User.LogIn.Url(Nav)}?returnUrl={Uri.EscapeDataString(returnUrl)}");
             return;
         }
 
