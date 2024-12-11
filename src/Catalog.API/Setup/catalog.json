@@ -8,6 +8,22 @@
     "Price": 89.99
   },
   {
+    "Id": 2,
+    "Type": "Apparel",
+    "Brand": "ElegantMiles",
+    "Name": "Lilac Breeze Running Jacket",
+    "Description": "Run comfortably on cooler days with the Lilac Breeze Running Jacket. It’s wind-resistant, lightweight, and has a flattering fit.",
+    "Price": 79.99
+  },  
+  {
+    "Id": 3,
+    "Type": "Footwear",
+    "Brand": "PacePetal",
+    "Name": "Cherry Blossom Trainers",
+    "Description": "Experience comfort and charm with the Cherry Blossom Trainers. These lightweight shoes feature a petal-inspired tread for enhanced grip.",
+    "Price": 84.99
+  },
+  {
     "Id": 4,
     "Type": "Apparel",
     "Brand": "VelvetStride",
@@ -62,5 +78,13 @@
     "Name": "SparkleStride Sneakers",
     "Description": "Make a statement with the SparkleStride Sneakers. These shoes feature glitter detailing and a supportive midsole for ultimate style and performance.",
     "Price": 99.99
+  },
+  {
+    "Id": 11,
+    "Type": "Accessories",
+    "Brand": "PinkPower",
+    "Name": "Rose Quartz Water Bottle",
+    "Description": "Stay hydrated with the Rose Quartz Water Bottle. It’s BPA-free, insulated, and features an elegant pink finish.",
+    "Price": 24.99
   }
 ]
