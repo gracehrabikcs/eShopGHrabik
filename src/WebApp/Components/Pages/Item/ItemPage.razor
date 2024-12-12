@@ -86,7 +86,7 @@ else if (notFound)
             notFound = true;
         }
     }
-    /*
+    
     private async Task AddToCartAsync()
     {
         if (!isLoggedIn)
@@ -101,8 +101,9 @@ else if (notFound)
             await UpdateNumInCartAsync();
         }
     }
-    */
+    
    // updated AddToCartAsync method
+   /*
     private async Task AddToCartAsync()
     {
         if (!isLoggedIn)
@@ -119,7 +120,7 @@ else if (notFound)
             await UpdateNumInCartAsync();
         }
     }
-
+    */
     private async Task UpdateNumInCartAsync()
     {
         var items = await BasketState.GetBasketItemsAsync();

@@ -10,12 +10,25 @@
 
     protected override async Task OnInitializedAsync()
     {
+        // Default to main page if ReturnUrl is not provided
         var returnUrl = ReturnUrl ?? "/";
-        var url = new Uri(returnUrl, UriKind.RelativeOrAbsolute);
-        Nav.NavigateTo(url.IsAbsoluteUri ? "/" : returnUrl);
+        //var url = new Uri(returnUrl, UriKind.RelativeOrAbsolute);
+        //Nav.NavigateTo(url.IsAbsoluteUri ? "/" : returnUrl);
+        //await base.OnInitializedAsync();
+        // Validate the returnUrl to ensure it's a relative path
+        if (!Uri.TryCreate(returnUrl, UriKind.RelativeOrAbsolute, out var uri) || uri.IsAbsoluteUri)
+        {
+            // Fallback to the main page if invalid or absolute URI
+            returnUrl = "/";
+        }
+
+        // Navigate to the validated return URL
+        Nav.NavigateTo(returnUrl);
+
         await base.OnInitializedAsync();
     }
 
     public static string Url(NavigationManager nav)
         => $"user/login?returnUrl={Uri.EscapeDataString(nav.ToBaseRelativePath(nav.Uri))}";
 }
+
