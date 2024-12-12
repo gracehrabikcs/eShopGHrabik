@@ -10,20 +10,32 @@
 
     protected override async Task OnInitializedAsync()
     {
-        // Default to main page if ReturnUrl is not provided
+        // Default return URL to root if none is provided
         var returnUrl = ReturnUrl ?? "/";
-        //var url = new Uri(returnUrl, UriKind.RelativeOrAbsolute);
-        //Nav.NavigateTo(url.IsAbsoluteUri ? "/" : returnUrl);
-        //await base.OnInitializedAsync();
-        // Validate the returnUrl to ensure it's a relative path
-        if (!Uri.TryCreate(returnUrl, UriKind.RelativeOrAbsolute, out var uri) || uri.IsAbsoluteUri)
-        {
-            // Fallback to the main page if invalid or absolute URI
-            returnUrl = "/";
-        }
 
-        // Navigate to the validated return URL
-        Nav.NavigateTo(returnUrl);
+        try
+        {
+            // Debugging: Log the returnUrl for verification
+            Console.WriteLine($"ReturnUrl: {returnUrl}");
+
+            // Validate the returnUrl
+            if (string.IsNullOrWhiteSpace(returnUrl) || returnUrl.StartsWith("http", StringComparison.OrdinalIgnoreCase))
+            {
+                // Redirect to root if returnUrl is invalid or absolute
+                Nav.NavigateTo("/");
+            }
+            else
+            {
+                // Safely navigate to relative returnUrl
+                Nav.NavigateTo(returnUrl);
+            }
+        }
+        catch (Exception ex)
+        {
+            // Log any navigation errors and navigate to root as fallback
+            Console.WriteLine($"Navigation error: {ex.Message}");
+            Nav.NavigateTo("/");
+        }
 
         await base.OnInitializedAsync();
     }
@@ -31,4 +43,3 @@
     public static string Url(NavigationManager nav)
         => $"user/login?returnUrl={Uri.EscapeDataString(nav.ToBaseRelativePath(nav.Uri))}";
 }
-
